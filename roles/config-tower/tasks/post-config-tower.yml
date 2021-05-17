@@ -1,6 +1,11 @@
 - name: Create Homework Assignment project
-  debug:
-    msg: "Hello"
+  tower_project:
+    name: "{{proj_name}}"
+    organization: "{{org_name}}"
+    scm_update_on_launch: True
+    scm_branch: "{{scm_branch}}"
+    scm_url: "{{scm_url}}"
+    scm_type: "git"
 
 - name: Machine Credentail to connect to workstation using openstack.pub
   tower_credential:
