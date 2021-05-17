@@ -37,7 +37,8 @@
     state: present
     tower_host: tower1.{{tower_GUID}}.example.opentlc.com
     tower_username: admin
-    tower_password: r3dh4t1!
+    #tower_password: r3dh4t1!
+    tower_password: "{{lookup('env', 'TOWER_PASSWD')}}"
     tower_verify_ssl: no
 
 - name: Associate workstation host to group 
